@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Planner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Great Vibes', cursive;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            color: #333;
+        }
+        .hero {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/800') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 4rem;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            color: #f15b2a;
+        }
+        .btn-custom {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            border: none;
+            color: white;
+        }
+        .btn-custom:hover {
+            background: linear-gradient(to right, #feb47b, #ff7e5f);
+        }
+        .modal-content {
+            border-radius: 15px;
+        }
+        .modal-header {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .modal-body img {
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 15px;
+        }
+        .modal-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        @media (max-width: 768px) {
+            .card {
+                margin-bottom: 20px;
+            }
+            .card img {
+                height: 250px;
+                object-fit: cover;
+            }
+            .modal-dialog {
+                margin: 10px;
+                max-width: 95%;
+            }
+            .modal-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            .modal-gallery img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<div class="hero">
+    <div>
+        <h1>Plan Your Dream Wedding with Us</h1>
+        <p class="lead">Creating unforgettable moments, one celebration at a time.</p>
+        <a href="#services" class="btn btn-custom btn-lg">Explore Services</a>
+    </div>
+</div>
+
+<!-- Services Section -->
+<section id="services" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/api/placeholder/400/300" class="card-img-top" alt="Haldi Ceremony">
+                    <div class="card-body">
+                        <h5 class="card-title">Haldi Ceremony</h5>
+                        <p class="card-text">Experience the joy and traditions of a vibrant Haldi ceremony.</p>
+                        <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#haldiModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/api/placeholder/400/300" class="card-img-top" alt="Mehndi Ceremony">
+                    <div class="card-body">
+                        <h5 class="card-title">Mehndi Ceremony</h5>
+                        <p class="card-text">Celebrate with intricate designs and colorful festivities.</p>
+                        <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#mehndiModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/api/placeholder/400/300" class="card-img-top" alt="Barat Celebration">
+                    <div class="card-body">
+                        <h5 class="card-title">Barat Celebration</h5>
+                        <p class="card-text">Join the grand procession with music, dance, and joy.</p>
+                        <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#baratModal">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Gallery</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <img src="/api/placeholder/400/300" alt="Bride and Groom" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="/api/placeholder/400/300" alt="Wedding Cake" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="/api/placeholder/400/300" alt="Flower Bouquet" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="/api/placeholder/400/300" alt="Wedding Decor" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="/api/placeholder/400/300" alt="Wedding Rings" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-4">
+                <img src="/api/placeholder/400/300" alt="Wedding Dance" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-dark text-white">
+    <div class="container">
+        <h2 class="text-center mb-5">Contact Us</h2>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Your Email">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-custom">Submit</button>
+        </form>
+    </div>
+</section>
+
+<!-- Modals -->
+<!-- Haldi Modal -->
+<div class="modal fade" id="haldiModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Haldi Ceremony Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>The Haldi ceremony is a pre-wedding ritual where a paste made from turmeric, oil, and water is applied to the bride and groom. This ceremony is known to bring good luck and bless the couple with glowing skin.</p>
+                <div class="modal-gallery">
+                    <img src="/api/placeholder/300/200" alt="Haldi 1">
+                    <img src="/api/placeholder/300/200" alt="Haldi 2">
+                    <img src="/api/placeholder/300/200" alt="Haldi 3">
+                    <img src="/api/placeholder/300/200" alt="Haldi 4">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mehndi Modal -->
+<div class="modal fade" id="mehndiModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Mehndi Ceremony Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>The Mehndi ceremony is a festive event where intricate henna designs are applied to the bride's hands and feet. It's filled with music, dance, and celebrations with close family and friends.</p>
+                <div class="modal-gallery">
+                    <img src="/api/placeholder/300/200" alt="Mehndi 1">
+                    <img src="/api/placeholder/300/200" alt="Mehndi 2">
+                    <img src="/api/placeholder/300/200" alt="Mehndi 3">
+                    <img src="/api/placeholder/300/200" alt="Mehndi 4">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Barat Modal -->
+<div class="modal fade" id="baratModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Barat Celebration Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>The Barat is the groom's wedding procession. It's a grand celebration with music, dancing, and festivities as the groom travels to the wedding venue, usually on a horse, accompanied by his family and friends.</p>
+                <div class="modal-gallery">
+                    <img src="/api/placeholder/300/200" alt="Barat 1">
+                    <img src="/api/placeholder/300/200" alt="Barat 2">
+                    <img src="/api/placeholder/300/200" alt="Barat 3">
+                    <img src="/api/placeholder/300/200" alt="Barat 4">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
